@@ -1,0 +1,1 @@
+This is Workout 1 of Stat133-SP19. This assignment works with shot data from 5 players on the NBA team the Golden State Warriors. It involves working with a more complex file structure, cleaning and outputting data, and creating shot charts. Finally, we draft a report with an overview of all the work.
