@@ -18,7 +18,7 @@ check_trials <- function(trials) {
 
 # private function to check validity of success value
 check_success <- function(success, trials) {
-  if (all(success <= trials) & (all(success > 0) & all(success%%1 == 0))) {
+  if (all(success <= trials)) {
     return(TRUE)
   } else {
     stop("success cannot be greater than trials")

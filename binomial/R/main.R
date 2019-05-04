@@ -41,7 +41,7 @@ bin_probability <- function(success, trials, prob){
 #' bin_distirbution(5, 2)
 #' @export
 bin_distribution <- function(trials, prob){
-  success <- 0:trials
+  success <- 0:(trials)
   probability <- bin_probability(success, trials, prob)
   res <- data.frame(success, probability)
   class(res) <- c("bindis", "data.frame")

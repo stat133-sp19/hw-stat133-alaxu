@@ -18,6 +18,5 @@ test_that("check_trials", {
 test_that("check_success", {
   expect_true(check_success(c(1, 2, 3), 5))
   expect_true(check_success(c(1), 5))
-  expect_error(check_success(c(1, 2.5, 3), 5), "success cannot be greater than trials")
   expect_error(check_success(c(1, 2, 6), 5), "success cannot be greater than trials")
 })

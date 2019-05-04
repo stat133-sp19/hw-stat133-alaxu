@@ -23,12 +23,15 @@ test_that("aux_mode", {
 
 test_that("aux_skewness", {
   #expect_equal(aux_skewness(10, 0.3), 0.2760262)
+  expect_type(aux_skewness(100, 0.5), "double")
   expect_length(aux_skewness(10, 0.3), 1)
   expect_type(aux_skewness(10, 0.3), "double")
+
 })
 
 test_that("aux_kurtosis", {
   #expect_equal(aux_kurtosis(10, 0.3), -0.1238095)
   expect_length(aux_kurtosis(10, 0.3), 1)
+  expect_length(aux_skewness(100, 0.5), 1)
   expect_type(aux_kurtosis(10, 0.3), "double")
 })
