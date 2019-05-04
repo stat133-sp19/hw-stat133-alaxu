@@ -1,0 +1,82 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  error = TRUE
+)
+library(binomial)
+```
+
+# Binomial Variable Package
+
+## Creating a binomial random variable
+```{r}
+X <- bin_variable(trials=10,prob=0.3)
+```
+
+#### Print and Display the Summary Statistics
+```{r}
+print(X)
+summary(X)
+```
+
+A summary function call outputs the following statistics of the created binomial variable:
+
++ mean
++ variance
++ mode
++ skewness
++ kurtosis
+
+Access a specific statistic separately like so:
+```{r}
+summary(X)$mean
+summary(X)$skewness
+```
+
+## Additional functions unrelated to binomial object
+### Auxiliary functions to calculate above statistics without explicit creation of a binomial variable
+```{r}
+bin_mean(trials=10, prob=0.3)
+bin_variance(trials=10, prob=0.3)
+bin_mode(trials=10, prob=0.3)
+bin_skewness(trials=10, prob=0.3)
+bin_kurtosis(trials=10, prob=0.3)
+```
+
+#### Calculate the number of possible combinations choosing k items from n total
+```{r}
+bin_choose(n=10, k=3)
+```
+
+#### Calculate the probability of getting a certain number of successes, given a number of trials and probability of success on each trial
+```{r}
+bin_probability(success=2, trials=5, prob=0.5)
+```
+
+#### Return a distribution with the number of possible successes and probability of each outcome
+```{r}
+bin_distribution(trials=5, prob=0.3)
+```
+
+#### Return a distribution with the number of possible successes, probability of each outcome, and the cumulative probability of getting at most each number of success
+```{r}
+bin_cumulative(trials=5, prob=0.3)
+```
+
+#### Both distribution can be visualized in a histogram
+```{r}
+plot(dist)
+plot(cumu)
+```
